@@ -2,36 +2,81 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Mars Data</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+  <title>Mission to Mars</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
-<body>
-  <div class="container-fluid">
+<body> 
+    <div class="container">
+
     <div class="jumbotron text-center">
-      <h1>Mars...</h1>
-      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Get Data!</a></p>
+        <h1 style="font-family:Impact;color:dark red;font-size: 70px;" class="display-4;">Mission to Mars</h1>
+        <a class="btn btn-lg text-white" style="background-color:#a30300;" href="/scrape" role="button">Scrape New
+          Data</a>
     </div>
-    <img src="{{ data.featured_image}}" alt="mars">
+
+    <div class="container">
+        <div class='row'>
+          <div class="col-lg-8 col-md-8 col-sm-6 col-xm-12">
+            <h3 style="color:rgb(163, 3, 0);font-family:Impact;text-align: center;">Featured Mars Image</h3>
+            <img src="{{ data.featured_image}}" style="max-width:100%;" alt="mars">
+          </div>
+
     <h3> {{ data.title }}</h3>
     <h3> {{ data.paragraph }}</h3>
-    <br> {{data.mars_facts|safe}}
-    <h3> {{ data.hemisphere_image[0] if p is not none else 'NONE'.title}}</h3>
-    <img src="{{ data.hemisphere_image[0] if p is not none else 'NONE'.title.img_url}}" alt="mars">
+        <div>
+            <h3 style="text-align: center; color:rgb(163, 3, 0); font-family:Impact">Mars Facts</h3>
+            <table>{{ data.mars_facts|safe}}</table>
+        </div>
+        </div>
+
+      </div>
+    </div>
+
     <br>
-    <h3> {{ data.hemisphere_image[1] if p is not none else 'NONE'.title.title}}</h3>
-    <img src="{{ data.hemisphere_image[1] if p is not none else 'NONE'.title.img_url}}" alt="mars">
-    <br>
-    <h3> {{ data.hemisphere_image[2] if p is not none else 'NONE'.title.title}}</h3>
-    <img src="{{ data.hemisphere_image[2] if p is not none else 'NONE'.title.img_url}}" alt="mars">
-    <br>
-    <h3> {{ data.hemisphere_image[3] if p is not none else 'NONE'.title.title}}</h3>
-    <img src="{{ data.hemisphere_image[3] if p is not none else 'NONE'.title.img_url}}" alt="mars">
+    <h1 style="padding-top:30px; padding-bottom: 30px; text-align: center; color:rgb(163, 3, 0);font-family:Impact;">
+      Mars Hemispheres</h1>
+
   </div>
-  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-12">
+              
+            <h3> {{ data.hemisphere_image[0] if p is not none else 'NONE'.title}}</h3>
+            <img src="{{ data.hemisphere_image[0] if p is not none else 'NONE'.title.img_url}}" style="max-width:80%;
+            height:auto;" />
+          </div>
+          <div class="col-md-12">
+            <h3> {{ data.hemisphere_image[1] if p is not none else 'NONE'.title.title}}</h3>
+            <img src="{{ data.hemisphere_image[1] if p is not none else 'NONE'.title.img_url}}" style="max-width:80%;
+            height:auto;" />
+          </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-12">
+            <h3> {{ data.hemisphere_image[2] if p is not none else 'NONE'.title.title}}</h3>
+            <img src="{{ data.hemisphere_image[2] if p is not none else 'NONE'.title.img_url}}" style="max-width:80%;
+            height:auto;" />>
+          </div>
+          <div class="col-md-12">
+            <h3> {{ data.hemisphere_image[3] if p is not none else 'NONE'.title.title}}</h3>
+            <img src="{{ data.hemisphere_image[3] if p is not none else 'NONE'.title.img_url}}" style="max-width:80%;
+            height:auto;" />
+            </div>
+        </div>
+    </div>
+</div>
+
+©2022 pemenalo
+
 </body>
 
 </html>
